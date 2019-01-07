@@ -17,7 +17,9 @@ paste_rev2 <- function(..., sep=" ", collapse=NULL) {
   arg <- c(lapply(list(...), rev), list(sep=sep, collapse=collapse))
   do.call(paste, arg)
 }
-apply(out, 1, paste_rev2, collapse=".")
+
+# not sure why this is here
+#apply(out, 1, paste_rev2, collapse=".")
 
 default_weekhour_order = apply(expand.grid(hour=paste0(':hour',hours_), dow=paste0('day',dow)), 1, paste_rev2, collapse='')
 n_weekhours = 24*7
